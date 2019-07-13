@@ -1,0 +1,792 @@
+{
+    "project": {
+        "name": "VueSPA",
+        "description": "Vue extension framework for SPA Application",
+        "version": "0.1.0"
+    },
+    "files": {
+        "core/ajax.js": {
+            "name": "core/ajax.js",
+            "modules": {
+                "VueSPA": 1
+            },
+            "classes": {
+                "VueSPA.Ajax": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "core/controller.js": {
+            "name": "core/controller.js",
+            "modules": {},
+            "classes": {
+                "VueSPA.Controller": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "core/main.js": {
+            "name": "core/main.js",
+            "modules": {},
+            "classes": {
+                "VueSPA.Main": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "core/router.js": {
+            "name": "core/router.js",
+            "modules": {},
+            "classes": {
+                "VueSPA.Router": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "core/service.js": {
+            "name": "core/service.js",
+            "modules": {},
+            "classes": {
+                "VueSPA.Service": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "core/utils.js": {
+            "name": "core/utils.js",
+            "modules": {},
+            "classes": {
+                "VueSPA.Utils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "index.js": {
+            "name": "index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "VueSPA": {
+            "name": "VueSPA",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "VueSPA.Ajax": 1,
+                "VueSPA.Controller": 1,
+                "VueSPA.Main": 1,
+                "VueSPA.Router": 1,
+                "VueSPA.Service": 1,
+                "VueSPA.Utils": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "core/utils.js",
+            "line": 5,
+            "extends": "VueSPA.Service",
+            "itemtype": "property",
+            "type": "{object} Vueオブジェクト"
+        }
+    },
+    "classes": {
+        "VueSPA.Ajax": {
+            "name": "VueSPA.Ajax",
+            "shortname": "VueSPA.Ajax",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "VueSPA",
+            "namespace": "",
+            "file": "core/ajax.js",
+            "line": 27,
+            "is_constructor": 1,
+            "extends": "VueSPA.Service",
+            "params": [
+                {
+                    "name": "options",
+                    "description": ""
+                }
+            ]
+        },
+        "VueSPA.Controller": {
+            "name": "VueSPA.Controller",
+            "shortname": "VueSPA.Controller",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "VueSPA",
+            "namespace": "",
+            "file": "core/controller.js",
+            "line": 19,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "vue",
+                    "description": "Vue定義",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n     export default class FooController extends VueSPA.Controller {\n          data(){\n              return {\n                  foo : 1\n              }\n          }\n          methods(){\n              return {\n                  method1 : function(){\n                      // this オブジェクトはこのControllerオブジェクト\n                  }\n              }\n          },\n          onEnter(){\n              //  画面遷移された時の処理\n          },\n          onExit(){\n              //  画面から抜けた時の処理\n          }\n      }"
+            ]
+        },
+        "VueSPA.Main": {
+            "name": "VueSPA.Main",
+            "shortname": "VueSPA.Main",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "VueSPA",
+            "namespace": "",
+            "file": "core/main.js",
+            "line": 3
+        },
+        "VueSPA.Router": {
+            "name": "VueSPA.Router",
+            "shortname": "VueSPA.Router",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "VueSPA",
+            "namespace": "",
+            "file": "core/router.js",
+            "line": 10,
+            "description": "Vue RouterでHTMLをダイナミックに読みこんで利用出来るようにしたラッパークラス",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": ""
+                }
+            ],
+            "example": [
+                "\n     let router = new VueSPA.Router({\n         routes : [\n             {\n                 name : \"add\",\n                 path : \"/add\",\n                 controller : FooController,\n                 templateUrl : \"tmpl/add.html\"\n             },\n             {\n\n             }\n         ]\n     });\n\n     let mainController = new VueSPA.Controller({\n             router : router\n     }).main();"
+            ]
+        },
+        "VueSPA.Service": {
+            "name": "VueSPA.Service",
+            "shortname": "VueSPA.Service",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "VueSPA",
+            "namespace": "",
+            "file": "core/service.js",
+            "line": 36,
+            "description": "サービスクラスを作成する為の基底クラス",
+            "is_constructor": 1
+        },
+        "VueSPA.Utils": {
+            "name": "VueSPA.Utils",
+            "shortname": "VueSPA.Utils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "VueSPA",
+            "namespace": "",
+            "file": "core/utils.js",
+            "line": 5
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "core/ajax.js",
+            "line": 68,
+            "description": "何らかの初期化処理が必要な場合に上書き定義する",
+            "itemtype": "method",
+            "name": "init",
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/ajax.js",
+            "line": 78,
+            "description": "アクセスするエンドポイントのマップを定義する",
+            "itemtype": "method",
+            "name": "urls",
+            "return": {
+                "description": "}"
+            },
+            "example": [
+                "\n     urls(){\n         return {\n             add : \"/path/to/add\",\n             update : \"/path/to/update/{sid}\",\n             list : \"/path/to/list/{page}/{limit}\"\n         }\n     }\n\n     /path/to/update/5 にデータをポストする場合\n\n     this.doPost(\"update\",{\n         title : \"名称\"\n     },{\n         sid : 5\n     };\n"
+            ],
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/ajax.js",
+            "line": 110,
+            "description": "ファイルのアップロード処理",
+            "itemtype": "method",
+            "name": "doUpload",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "エンドポイント名. urls()で定義した名前",
+                    "type": "String"
+                },
+                {
+                    "name": "file",
+                    "description": "HTML Fileオブジェクト",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "Pathパラメータ",
+                    "type": "Object"
+                },
+                {
+                    "name": "headers",
+                    "description": "追加ヘッダ",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise<any>"
+            },
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/ajax.js",
+            "line": 159,
+            "description": "JSONデータのPOST処理",
+            "itemtype": "method",
+            "name": "doPost",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "エンドポイント名. urls()で定義した名前",
+                    "type": "String"
+                },
+                {
+                    "name": "postData",
+                    "description": "POSTデータ",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "Pathパラメータ",
+                    "type": "Object"
+                },
+                {
+                    "name": "headers",
+                    "description": "追加ヘッダ",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise<any>"
+            },
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/ajax.js",
+            "line": 211,
+            "description": "GETリクエストを行う",
+            "metod": "doGet",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "エンドポイント名. urls()で定義した名前",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "Pathパラメータ",
+                    "type": "Object"
+                },
+                {
+                    "name": "headers",
+                    "description": "追加ヘッダ",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise<any>"
+            },
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/ajax.js",
+            "line": 252,
+            "description": "DELETEメソッドを送信する",
+            "itemtype": "method",
+            "name": "doDelete",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "エンドポイント名. urls()で定義した名前",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "Pathパラメータ",
+                    "type": "Object"
+                },
+                {
+                    "name": "headers",
+                    "description": "追加ヘッダ",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise<any>"
+            },
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/ajax.js",
+            "line": 293,
+            "description": "リクエスト実装処理",
+            "itemtype": "method",
+            "name": "_request",
+            "params": [
+                {
+                    "name": "url",
+                    "description": ""
+                },
+                {
+                    "name": "opts",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise<any>"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "VueSPA.Ajax",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 230,
+            "description": "コントローラインスタンスが作成された時の初期化メソッド",
+            "itemtype": "method",
+            "name": "init",
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 239,
+            "description": "Vueでのdata定義",
+            "itemtype": "method",
+            "name": "data",
+            "example": [
+                "\n     data(){\n          return {\n              sid : 0,\n              list: []\n          }\n      }\n      // アクセスする際のコード例\n      this.$vue.sid = 3;"
+            ],
+            "return": {
+                "description": "}"
+            },
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 308,
+            "description": "指定した関数をthisにbindする\n\n_.bind(method,this)",
+            "itemtype": "method",
+            "name": "bindMethod",
+            "params": [
+                {
+                    "name": "method",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "bindされた関数",
+                "type": "Function"
+            },
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 323,
+            "description": "Vue.$props.$refs から値を取得する",
+            "example": [
+                "\n\n     <my-component ref=\"mycomp\"></my-component>\n     let myComp = this.refs(\"mycomp\");"
+            ],
+            "itemtype": "method",
+            "name": "refs",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "refで指定されたVue Componentを取得する",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Null|any"
+            },
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 344,
+            "description": "vue.beforeCreate が実行されたタイミングでのメソッド",
+            "itemtype": "method",
+            "name": "onInit",
+            "params": [
+                {
+                    "name": "vue",
+                    "description": "Vueインスタンス",
+                    "type": "Object"
+                }
+            ],
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 354,
+            "description": "画面遷移でされた時に実行されるメソッド\n\nvue.beforeRouteEnter, vue.beforeRouteUpdate 時に実行されるメソッド",
+            "itemtype": "method",
+            "name": "onEnter",
+            "params": [
+                {
+                    "name": "vue",
+                    "description": "Vueインスタンス",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "Route時のPathパラメータ",
+                    "type": "Object"
+                },
+                {
+                    "name": "to",
+                    "description": "Vue Routerのtoルート",
+                    "type": "Object"
+                },
+                {
+                    "name": "from",
+                    "description": "Vue Router のfromルート",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 371,
+            "description": "コントローラを抜けた（画面遷移）時に実行されるメソッド\n\nvue.beforeRouteLeave 時に実行されるメソッド",
+            "itemtype": "method",
+            "name": "onExit",
+            "params": [
+                {
+                    "name": "vue",
+                    "description": ""
+                },
+                {
+                    "name": "to",
+                    "description": ""
+                },
+                {
+                    "name": "from",
+                    "description": ""
+                }
+            ],
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 385,
+            "description": "子ルートが遷移した時のよばれるメソッド",
+            "itemtype": "method",
+            "name": "onChildEnter",
+            "params": [
+                {
+                    "name": "to",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "from",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "child",
+                    "description": "子VueSPA.Controllerのインスタンス",
+                    "type": "Object"
+                }
+            ],
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 397,
+            "description": "子ルートから出たとき",
+            "itemtype": "method",
+            "name": "onChildExit",
+            "params": [
+                {
+                    "name": "to",
+                    "description": ""
+                },
+                {
+                    "name": "from",
+                    "description": ""
+                },
+                {
+                    "name": "child",
+                    "description": ""
+                }
+            ],
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/controller.js",
+            "line": 410,
+            "description": "vue-router.push のエイリアスメソッド",
+            "itemtype": "method",
+            "name": "navigate",
+            "example": [
+                "\n     this.navigate(-1); // history.back相当\n     this.navigate(1);  // history.forward相当\n     this.navigate(\"^\"); // 親ルートに遷移する\n     this.navigate(\".child\"); // 自分から見た子(child)ルートに遷移する\n     this.navigate(\"path\"); // 完全なルート名を指定し遷移する\n     this.navigate(\"^.child2\"); // 自分から見た親から見た子（child2)、つまり兄弟ルートに遷移する\n\n     //  パラメータを指定する場合\n     this.navigate(\"^.list\",{\n         page: 2,\n         limit : 10\n     });"
+            ],
+            "params": [
+                {
+                    "name": "name",
+                    "description": "パス名もしくは、数字（戻る、進む数）を指定する",
+                    "type": "String|number"
+                },
+                {
+                    "name": "params",
+                    "description": "Pathパラメータの指定が必要な場合に指定する",
+                    "type": "Object"
+                }
+            ],
+            "class": "VueSPA.Controller",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/main.js",
+            "line": 10,
+            "description": "メインコントローラでの実行処理",
+            "itemtype": "method",
+            "name": "start",
+            "example": [
+                "\n    let main = new VueSPA.Main({\n\n    }).start();\n"
+            ],
+            "class": "VueSPA.Main",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/main.js",
+            "line": 30,
+            "description": "Vueが作成されたときのイベント処理",
+            "class": "VueSPA.Main",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/main.js",
+            "line": 37,
+            "description": "DOM要素にアクセスできる状態になった時のイベント\n\n( vue.mounted )",
+            "itemtype": "method",
+            "name": "onStart",
+            "params": [
+                {
+                    "name": "vue",
+                    "description": ""
+                }
+            ],
+            "class": "VueSPA.Main",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/main.js",
+            "line": 49,
+            "description": "Mainの場合には、onEnterは実行されません。代わりに、onStartedを利用してください。",
+            "itemtype": "method",
+            "name": "onEnter",
+            "params": [
+                {
+                    "name": "vue",
+                    "description": ""
+                }
+            ],
+            "class": "VueSPA.Main",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/router.js",
+            "line": 105,
+            "description": "HTMLのローダーインスタンスを取得する",
+            "itemtype": "method",
+            "name": "getLoader",
+            "return": {
+                "description": "",
+                "type": "Loader"
+            },
+            "class": "VueSPA.Router",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/router.js",
+            "line": 157,
+            "description": "ルートしないようにロックする",
+            "itemtype": "method",
+            "name": "lock",
+            "access": "protected",
+            "tagname": "",
+            "class": "VueSPA.Router",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/service.js",
+            "line": 25,
+            "description": "サービスの名称を取得する",
+            "static": 1,
+            "itemtype": "method",
+            "name": "name",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "VueSPA.Service",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/utils.js",
+            "line": 11,
+            "description": "Backboneのイベントオブジェクトを作成する",
+            "static": 1,
+            "itemtype": "method",
+            "name": "createEventObject",
+            "return": {
+                "description": ""
+            },
+            "class": "VueSPA.Utils",
+            "module": "VueSPA"
+        },
+        {
+            "file": "core/utils.js",
+            "line": 24,
+            "description": "指定したオブジェクトにBackbone.Events機能を追加したオブジェクトにする\n\n通常のVue Componentの場合イベント処理を扱うのが面倒なため、Backbone.Eventsのメソッドを使えるように拡張する等。",
+            "static": 1,
+            "itemtype": "method",
+            "name": "extendEvents",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "example": [
+                "\n\n     let comp = {\n         created(){\n             VueSPA.Utils.extendEvents(this);\n         },\n         methods : {\n             foo: function(){\n                 this.trigger('foo');\n             }\n         }\n     }\n\n     // VueSPA.Controller内で以下の様な使い方を想定\n\n     onEnter(){\n         let comp = this.refs(\"comp\");\n         this.listenTo(comp,\"foo\",function(){});\n     }\n\n"
+            ],
+            "class": "VueSPA.Utils",
+            "module": "VueSPA"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/ajax.js:78"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/ajax.js:110"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/ajax.js:159"
+        },
+        {
+            "message": "unknown tag: metod",
+            "line": " core/ajax.js:211"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/ajax.js:211"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/ajax.js:252"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/ajax.js:293"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/controller.js:239"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/controller.js:308"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/controller.js:323"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/controller.js:354"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/router.js:105"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/service.js:25"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " core/utils.js:24"
+        },
+        {
+            "message": "Missing item type\nGETリクエストを行う",
+            "line": " core/ajax.js:211"
+        },
+        {
+            "message": "Missing item type\nVueが作成されたときのイベント処理",
+            "line": " core/main.js:30"
+        }
+    ]
+}

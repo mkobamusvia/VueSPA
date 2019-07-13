@@ -1,0 +1,9 @@
+{
+  "name" : "VueSPA",
+  "description" : "Vue extension framework for SPA Application",
+  "version" : "0.1.0",
+  "options" : {
+    "paths": ["."],
+    "outdir": "../build/html"
+  }
+}
